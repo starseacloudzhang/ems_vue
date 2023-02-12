@@ -1,0 +1,21 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.huike.dao.IndexDAO">
+
+    <!--findAll-->
+    <select id="findAll" resultType="index">
+        select id,pic,sname,detail,price,pid,bgpic,oldprice,rom,color from shopindex where pid=1
+    </select>
+    <select id="findTv" resultType="index">
+        select id,pic,sname,detail,price,pid,bgpic,oldprice,rom,color from shopindex where pid=3
+    </select>
+    <select id="findWatch" resultType="index">
+        select id,pic,sname,detail,price,pid,bgpic,oldprice,rom,color from shopindex where pid=2
+    </select>
+    <!--findOne-->
+    <select id="findOne" parameterType="String" resultType="index">
+        select id,pic,sname,detail,price,bgpic,oldprice,rom,color from shopindex
+        where id = #{id}
+    </select>
+
+</mapper>
